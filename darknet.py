@@ -91,10 +91,8 @@ def class_colors(names):
     Create a dict with one random BGR color for each
     class name
     """
-    return {name: (
-        random.randint(0, 255),
-        random.randint(0, 255),
-        random.randint(0, 255)) for name in names}
+    colors = [(0,0,255), (0,255,0), (255,0,255), (0,255,255), (255,0,0)]
+    return {names[i]: colors[i] for i in range(len(names))}
 
 
 def load_network(config_file, data_file, weights, batch_size=1):
